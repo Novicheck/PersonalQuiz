@@ -11,11 +11,11 @@ import UIKit
 class ResultsViewController: UIViewController {
     
     //MARK: - Properties
-    var choosenAnswers:[Answer]?
+    var choosenAnswers: [Answer]?
     
     //MARK: - Private Properties
-    private var answer:Answer?
-    private var animalType:AnimalType?
+    private var answer: Answer?
+    private var animalType: AnimalType?
 
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var resultDescriptionLabel: UILabel!
