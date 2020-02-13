@@ -64,15 +64,15 @@
                             <constraint firstItem="gdQ-tr-jvX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="3Vg-af-bIQ"/>
                             <constraint firstItem="K1W-ez-Dsm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="9Eg-aU-yGa"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VcO-51-NR3" secondAttribute="trailing" constant="20" id="BS7-mP-9U0"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IfA-QV-L4f" secondAttribute="trailing" constant="20" id="CZC-GM-P7S"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="VcO-51-NR3" secondAttribute="bottom" constant="20" id="FcP-aJ-bSZ"/>
-                            <constraint firstItem="IfA-QV-L4f" firstAttribute="leading" secondItem="K1W-ez-Dsm" secondAttribute="trailing" constant="212" id="OdU-id-rfX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IfA-QV-L4f" secondAttribute="trailing" constant="20" id="Mhh-rA-mAS"/>
+                            <constraint firstItem="IfA-QV-L4f" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="K1W-ez-Dsm" secondAttribute="trailing" constant="212" id="OdU-id-rfX"/>
                             <constraint firstItem="K1W-ez-Dsm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="WL4-LB-zyn"/>
                             <constraint firstItem="IfA-QV-L4f" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="Z3t-vl-Dmt"/>
                             <constraint firstItem="gch-W6-Zyc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dBY-BQ-4Q7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gdQ-tr-jvX" secondAttribute="bottom" constant="20" id="jRi-9x-Hqo"/>
                             <constraint firstItem="gch-W6-Zyc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="qWQ-41-3i6"/>
-                            <constraint firstItem="VcO-51-NR3" firstAttribute="leading" secondItem="gdQ-tr-jvX" secondAttribute="trailing" constant="212" id="xNA-K8-GHm"/>
+                            <constraint firstItem="VcO-51-NR3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gdQ-tr-jvX" secondAttribute="trailing" constant="212" id="xNA-K8-GHm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -215,7 +215,7 @@
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTd-8r-IBw">
                                         <rect key="frame" x="0.0" y="82.5" width="280" height="30"/>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="Ответить"/>
                                         <connections>
                                             <action selector="rangedAnswerButtonPressed:" destination="5Lu-rQ-BKY" eventType="touchUpInside" id="HQc-jl-mRv"/>
                                         </connections>
@@ -322,6 +322,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="resultDescriptionLabel" destination="vpz-k0-Wuz" id="nMz-OK-O3i"/>
+                        <outlet property="resultLabel" destination="hZf-w7-bRc" id="QWP-E3-Yrg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rTc-r3-KGh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="qfm-1h-fHY" userLabel="Exit" sceneMemberID="exit"/>
