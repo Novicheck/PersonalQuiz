@@ -53,7 +53,7 @@ class ResultsViewController: UIViewController {
             animalType = .turtle
         }
         
-        resultLabel.text = "вы - \(animalType ?? .dog))!"
+        resultLabel.text = "вы - \(animalType?.rawValue ?? "🐶")!"
         resultDescriptionLabel.text = animalType?.difinition
     }
 
