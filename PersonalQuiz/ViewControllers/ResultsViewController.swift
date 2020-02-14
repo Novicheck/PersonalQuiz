@@ -10,17 +10,12 @@ import UIKit
 
 class ResultsViewController: UIViewController {
     
-    //MARK: - Properties
-    var choosenAnswers: [Answer]?
-    
-    //MARK: - Private Properties
-    private var answer: Answer?
-    private var animalType: AnimalType?
-
+    //MARK: - IBOutlets
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var resultDescriptionLabel: UILabel!
 
-    
+    //MARK: - Properties
+    var choosenAnswers: [Answer]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,32 +24,29 @@ class ResultsViewController: UIViewController {
     }
 
     private func determineTheType() {
-        var dog = 0
-        var cat = 0
-        var rabbit = 0
-        var turtle = 0
-        if let arrayAnswers = choosenAnswers {
-        for answer in arrayAnswers {
-            switch answer.type {
-                case .cat: cat += 1
-                case .dog: dog += 1
-                case .rabbit: rabbit += 1
-                case .turtle: turtle += 1
-            }
-            }
-        }
-        if dog > cat && dog > rabbit && dog > turtle {
-            animalType = .dog
-        } else if cat > dog && cat > rabbit && cat > turtle {
-            animalType = .cat
-        } else if rabbit > dog && rabbit > cat && rabbit > turtle {
-            animalType = .rabbit
-        } else if turtle > dog && turtle > cat && turtle > rabbit {
-            animalType = .turtle
-        }
+        var frequencyOfAnimals: [AnimalType: Int] = [:]
+        let animals = choosenAnswers.map {$0.type}
         
-        resultLabel.text = "вы - \(animalType?.rawValue ?? "🐶")!"
-        resultDescriptionLabel.text = animalType?.difinition
+//        for animal in animals {
+//            guard let animalTypeCount = frequencyOfAnimals[animal] else {
+//                frequencyOfAnimals[animal] = 1
+//                return
+//            }
+//            frequencyOfAnimals.updateValue(animalTypeCount + 1, forKey: animal)
+//        }
+        
+         for animal in animals {
+            frequencyOfAnimals[animal] = (frequencyOfAnimals[animal] ?? 0) + 1
+         }
+
+        let sortedFrequencyOfAnimals = frequencyOfAnimals.max {$0.value > $1.value}
+        guard let mostFrequencyAnimal = sortedFrequencyOfAnimals?.key else {return}
+        updateUI(with: mostFrequencyAnimal)
+    }
+    
+    private func updateUI(with animal: AnimalType) {
+        resultLabel.text = "ВЫ - \(animal.rawValue)"
+        resultDescriptionLabel.text = animal.difinition
     }
 
 }
